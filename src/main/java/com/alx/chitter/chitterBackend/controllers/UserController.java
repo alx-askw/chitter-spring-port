@@ -32,13 +32,20 @@ public class UserController {
     //https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
     @PostMapping(value = "/login")
     public ResponseEntity<loginResponse> login(@RequestBody LoginRequest loginRequest){
-        boolean validLogin = userServices.loginUser(loginRequest.getUserEmail(), loginRequest.getPassword());
-        if(validLogin){
-            Optional<User> currentUser = userServices.getUserByUserName(loginRequest.getUserEmail());
-            loginResponse res = new loginResponse(200, currentUser);
-            return ResponseEntity.ok(res);
-        } else{
-            loginResponse errorResponse = new loginResponse(404);
+        try {
+
+            boolean validLogin = userServices.loginUser(loginRequest.getUserEmail(), loginRequest.getPassword());
+            if (validLogin) {
+                Optional<User> currentUser = userServices.getUserByUserName(loginRequest.getUserEmail());
+                loginResponse res = new loginResponse(200, currentUser);
+                return ResponseEntity.ok(res);
+            } else {
+                loginResponse errorResponse = new loginResponse(401);
+                return ResponseEntity.status(401).body(errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            loginResponse errorResponse = new loginResponse(505);
             return ResponseEntity.status(505).body(errorResponse);
         }
     }

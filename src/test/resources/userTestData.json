@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "65e831af6eb5fe1bbaf8c245",
+    "name": "John",
+    "userName": "scrabbleMan1000",
+    "userEmail": "scrabb1000@email.com",
+    "password": "password1",
+    "pfpUrl": null
+  },
+  {
+    "_id": "65e831af6eb5fe1bbaf8c246",
+    "name": "Joe",
+    "userName": "scrabbleMan1001",
+    "userEmail": "scrabb1001@email.com",
+    "password": "password2",
+    "pfpUrl": null
+  },
+  {
+    "_id": "65e831af6eb5fe1bbaf8c247",
+    "name": "Digital-Futures-Air",
+    "userName": "DFAirlines",
+    "userEmail": "dfair@email.com",
+    "password": "password3",
+    "pfpUrl": null
+  }
+  ]

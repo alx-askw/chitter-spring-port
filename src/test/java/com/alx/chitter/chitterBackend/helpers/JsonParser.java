@@ -1,6 +1,7 @@
 package com.alx.chitter.chitterBackend.helpers;
 
 import com.alx.chitter.chitterBackend.model.Peeps;
+import com.alx.chitter.chitterBackend.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
@@ -25,6 +26,21 @@ public class JsonParser {
             System.out.println("flag" + peeps);
 
             return peeps;
+        } catch (IOException e){
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+
+    }
+
+    public static List<User> userJsonFileToObject() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try{
+            List<User> users = objectMapper.readValue(JsonParser.class.getResourceAsStream("/userTestData.json"),
+                    objectMapper.getTypeFactory().constructCollectionType(List.class, User.class)
+            );
+
+            return users;
         } catch (IOException e){
             e.printStackTrace();
             return new ArrayList<>();

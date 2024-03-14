@@ -41,6 +41,10 @@ public class User {
         this.password = password;
         this.pfpUrl = pfpUrl;
     }
+
+    public User(){
+
+    }
     public String getName() {
         return name;
     }
