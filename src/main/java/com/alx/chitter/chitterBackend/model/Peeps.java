@@ -35,7 +35,6 @@ public class Peeps {
     private String name;
 
     @JsonProperty("peepDate")
-//    @NotEmpty(message = "Require Date")
     @NotNull
     private LocalDateTime peepDate;
 
@@ -44,12 +43,13 @@ public class Peeps {
     private String peepContent;
 
     @JsonProperty("peepReplies")
-    List<PeepReply> peepReplies;
+    private List<PeepReply> peepReplies;
 
 
     //! Constructor
     public Peeps(){
         this.peepDate = LocalDateTime.now();
+        this.peepReplies = new ArrayList<PeepReply>(); // Frontend is expecting a reply array regardless of number of arrays
     }
 
     public String getUserName() {
@@ -58,6 +58,45 @@ public class Peeps {
 
     public void setUserName(String userName) {
         this.userName = userName;
-        this.peepReplies = new ArrayList<PeepReply>(); // Frontend is expecting a reply array regardless of number of arrays
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDateTime getPeepDate() {
+        return peepDate;
+    }
+
+    public void setPeepDate(LocalDateTime peepDate) {
+        this.peepDate = peepDate;
+    }
+
+    public String getPeepContent() {
+        return peepContent;
+    }
+
+    public void setPeepContent(String peepContent) {
+        this.peepContent = peepContent;
+    }
+
+    public List<PeepReply> getPeepReplies() {
+        return peepReplies;
+    }
+
+    public void setPeepReplies(List<PeepReply> peepReplies) {
+        this.peepReplies = peepReplies;
     }
 }

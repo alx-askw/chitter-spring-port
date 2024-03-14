@@ -1,11 +1,21 @@
-package com.alx.chitter.chitterBackend.response;
+package com.alx.chitter.chitterBackend.requests;
 
-public class PostPeepResponse {
+public class ReplyToPeepRequest {
+    private String peepId;
+
     private String userName;
 
     private String name;
 
     private String peepContent;
+
+    public String getPeepId() {
+        return peepId;
+    }
+
+    public void setPeepId(String peepId) {
+        this.peepId = peepId;
+    }
 
     public String getUserName() {
         return userName;

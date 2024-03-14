@@ -1,12 +1,11 @@
 package com.alx.chitter.chitterBackend.controllers;
 
+import com.alx.chitter.chitterBackend.model.PeepReply;
 import com.alx.chitter.chitterBackend.model.Peeps;
-import com.alx.chitter.chitterBackend.requests.PostNewPeepRequest;
-import com.alx.chitter.chitterBackend.response.PostPeepResponse;
+import com.alx.chitter.chitterBackend.requests.ReplyToPeepRequest;
 import com.alx.chitter.chitterBackend.services.PeepsServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +34,18 @@ public class PeepController {
             Peeps postNewPeep = peepsServices.postNewPeep(peeps);
             return postNewPeep;
         }catch (Exception e){
+            e.printStackTrace();
+            return new Peeps();
+        }
+    }
+
+    @PostMapping("/reply")
+    @CrossOrigin
+    public Peeps replyToPeep(@Valid @RequestBody PeepReply peepReply){
+        try{
+            Peeps postPeepReply = peepsServices.replyToPeep(peepReply);
+            return postPeepReply;
+        } catch (Exception e){
             e.printStackTrace();
             return new Peeps();
         }
