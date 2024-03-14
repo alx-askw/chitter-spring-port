@@ -13,14 +13,18 @@ import java.util.Optional;
 public class loginResponse {
      private int status;
 
-    private Message message;
+    private String name;
+
+    private String userName;
 
     public loginResponse(int Status, Optional<User> user) {
         this.status = Status;
         if(user.isPresent()) {
-            this.message = new Message(user.get());
+            this.name = user.get().getName();
+            this.userName = user.get().getUserName();
         } else{
-            this.message = null;
+            this.name = null;
+            this.userName = null;
         }
     }
 
@@ -34,29 +38,6 @@ public class loginResponse {
 
     public void setStatus(int status) {
         this.status = status;
-    }
-
-    public Message getMessage() {
-        return message;
-    }
-
-    public void setMessage(Message message) {
-        this.message = message;
-    }
-}
-
-class Message{
-
-    private String name;
-
-    private String userName;
-
-    private String pfpUrl;
-
-   public Message(User user){
-        this.name = user.getName();
-        this.userName = user.getUserName();
-        this.pfpUrl = " ";
     }
 
     public String getName() {
@@ -75,11 +56,4 @@ class Message{
         this.userName = userName;
     }
 
-    public String getPfpUrl() {
-        return pfpUrl;
-    }
-
-    public void setPfpUrl(String pfpUrl) {
-        this.pfpUrl = pfpUrl;
-    }
 }

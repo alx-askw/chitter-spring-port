@@ -5,7 +5,6 @@ import com.alx.chitter.chitterBackend.requests.LoginRequest;
 import com.alx.chitter.chitterBackend.response.loginResponse;
 import com.alx.chitter.chitterBackend.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,5 +42,6 @@ public class UserController {
             return ResponseEntity.status(505).body(errorResponse);
         }
     }
+
 
 }
