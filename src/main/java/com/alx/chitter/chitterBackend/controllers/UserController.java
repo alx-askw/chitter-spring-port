@@ -1,9 +1,11 @@
 package com.alx.chitter.chitterBackend.controllers;
 
 import com.alx.chitter.chitterBackend.model.User;
+import com.alx.chitter.chitterBackend.requests.LoginRequest;
 import com.alx.chitter.chitterBackend.response.loginResponse;
 import com.alx.chitter.chitterBackend.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,13 +32,16 @@ public class UserController {
     //generic to return something based on some logic
     //https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
     @PostMapping(value = "/login")
-    public ResponseEntity<?> login(@RequestBody User user){
-        boolean validLogin = userServices.loginUser(user.getUserEmail(), user.getPassword());
+    public ResponseEntity<loginResponse> login(@RequestBody LoginRequest loginRequest){
+        boolean validLogin = userServices.loginUser(loginRequest.getUserEmail(), loginRequest.getPassword());
         if(validLogin){
-            Optional<User> currentUser = userServices.getUserByUserName(user.getUserEmail());
-            return ResponseEntity.ok(200 );
+            Optional<User> currentUser = userServices.getUserByUserName(loginRequest.getUserEmail());
+            loginResponse res = new loginResponse(200, currentUser);
+            return ResponseEntity.ok(res);
+        } else{
+            loginResponse errorResponse = new loginResponse(404);
+            return ResponseEntity.status(505).body(errorResponse);
         }
-        return ResponseEntity.ok(404);
     }
 
 }

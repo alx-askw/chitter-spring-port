@@ -15,6 +15,7 @@ public class JsonParser {
             List<Peeps> peeps = objectMapper.readValue(JsonParser.class.getResourceAsStream("/testDate.json"),
                     objectMapper.getTypeFactory().constructCollectionType(List.class, Peeps.class)
                     );
+            System.out.println("flag" + peeps);
             return peeps;
         } catch (IOException e){
             return new ArrayList<>();
