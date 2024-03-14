@@ -1,0 +1,32 @@
+[
+  {
+  "_id": "65e831af6eb5fe1bbaf8c23b",
+  "userName": "scrabbleMan1000",
+  "name": "John",
+  "peepDate": "2024-03-06T09:04:47.646",
+  "peepContent": "I just scored using oxyphenbutazone on https://github.com/alx-askw/pre-academy-scrabble-challenge",
+  "peepReplies": [
+      {
+        "userName": "scrabbleMan1001",
+        "peepDate": "2024-03-06T09:04:47.646",
+        "peepContent": "Ha! You're still playing that old scrabble ... get a on a proper game at https://github.com/alx-askw/scrabble-challenge-java"
+      }
+    ]
+  },
+{
+"_id": "65e831af6eb5fe1bbaf8c23d",
+"userName": "DFAirlines",
+"name": "Digital-Futures-Air",
+"peepDate": "2024-03-06T09:04:47.646",
+"peepContent": "Book cheap flights to exotic destinations at https://github.com/alx-askw/airport-challenge",
+"peepReplies": []
+},
+{
+"_id": "65e831af6eb5fe1bbaf8c23e",
+"userName": "DFBank",
+"name": "Digital-Futures-Banking",
+"peepDate": "2024-03-06T09:04:47.646",
+"peepContent": "Safe Banking | Low Interest Loans at https://github.com/alx-askw/bank-challenge",
+"peepReplies": []
+}
+]
