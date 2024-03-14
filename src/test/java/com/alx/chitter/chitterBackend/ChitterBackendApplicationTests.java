@@ -36,6 +36,7 @@ class ChitterBackendApplicationTests {
 	}
 
 
+
 	@Nested
 	@DisplayName("GET PEEPS")
 	class GetAll {
@@ -56,14 +57,19 @@ class ChitterBackendApplicationTests {
 			}
 
 			@Test
-			@DisplayName("Should return list size of 2")
-			void shouldReturnListLengthOf2() throws Exception{
-				mockMvc.perform(get("/")).andExpect(jsonPath("$", hasSize(2)));
+			@DisplayName("Should return list size of 3")
+			void shouldReturnListLengthOf3() throws Exception{
+				mockMvc.perform(get("/")).andExpect(jsonPath("$", hasSize(3)));
 			}
 
 		}
 
 	}
 
+	@Nested
+	@DisplayName("Login Tests")
+	class PostLogin {
+
+	}
 
 }

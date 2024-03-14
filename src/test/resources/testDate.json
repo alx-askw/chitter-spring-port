@@ -1,6 +1,5 @@
 [
   {
-  "_id": "65e831af6eb5fe1bbaf8c23b",
   "userName": "scrabbleMan1000",
   "name": "John",
   "peepDate": "2024-03-06T09:04:47.646",
@@ -14,7 +13,6 @@
     ]
   },
 {
-"_id": "65e831af6eb5fe1bbaf8c23d",
 "userName": "DFAirlines",
 "name": "Digital-Futures-Air",
 "peepDate": "2024-03-06T09:04:47.646",
@@ -22,8 +20,7 @@
 "peepReplies": []
 },
 {
-"_id": "65e831af6eb5fe1bbaf8c23e",
-"userName": "DFBank",
+ "userName": "DFBank",
 "name": "Digital-Futures-Banking",
 "peepDate": "2024-03-06T09:04:47.646",
 "peepContent": "Safe Banking | Low Interest Loans at https://github.com/alx-askw/bank-challenge",

@@ -15,7 +15,7 @@ public class TestMongoConfig {
 
     @Bean
     public static MongoTemplate mongoTemplate(){
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory("mongodb://localhost:27017/chitterTesting"));
+        return new MongoTemplate(new SimpleMongoClientDatabaseFactory("mongodb://127.0.0.1:27017/chitterTest"));
     }
 
     public static void clearTestCollection(){
@@ -23,9 +23,9 @@ public class TestMongoConfig {
         mongoTemplate().remove(new Query(), collectionName);
     }
 
-    public static void populateTestCollection(List<Peeps> todos){
+    public static void populateTestCollection(List<Peeps> peeps){
         System.out.println("Populating testing DB");
-        mongoTemplate().insert(todos, collectionName);
+        mongoTemplate().insert(peeps, collectionName);
     }
 
 }
