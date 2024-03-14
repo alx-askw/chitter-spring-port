@@ -17,4 +17,7 @@ public class PeepsServices {
         return peepsRepository.findAll();
     }
 
+    public Peeps postNewPeep(Peeps postNewPeepRequest) {
+        return peepsRepository.save(postNewPeepRequest);
+    }
 }

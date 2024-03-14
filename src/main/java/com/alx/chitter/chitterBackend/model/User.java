@@ -19,7 +19,7 @@ public class User {
     private String name;
 
     @JsonProperty("userName")
-    @NotEmpty(message = "uusername required")
+    @NotEmpty(message = "username required")
     private String userName;
 
     @JsonProperty("userEmail")

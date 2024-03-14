@@ -23,17 +23,17 @@ public class UserController {
     };
 
     @GetMapping(value = "/getusers")
+    @CrossOrigin
     public List<User> getAllUsers(){
         return userServices.getAllUsers();
     }
 
-    @CrossOrigin
     //generic to return something based on some logic
     //https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
     @PostMapping(value = "/login")
+    @CrossOrigin
     public ResponseEntity<loginResponse> login(@RequestBody LoginRequest loginRequest){
         try {
-
             boolean validLogin = userServices.loginUser(loginRequest.getUserEmail(), loginRequest.getPassword());
             if (validLogin) {
                 Optional<User> currentUser = userServices.getUserByUserName(loginRequest.getUserEmail());
